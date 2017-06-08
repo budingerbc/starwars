@@ -1,81 +1,157 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Calculator</title>
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Calculator</h1>
+<head>
+  <title>The Force!</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
 
-      <div class="row">
-        <div class="col-md-6">
+    <h1>What Star Wars character are you?</h1>
 
-      <form id="add">
-        <div class="form-group">
-          <label for="add1">1st number:</label>
-          <input id="add1" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="add2">2nd number:</label>
-          <input id="add2" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn">Add!</button>
-      </form>
-      <div id="outputAdd"></div>
+    <form id="starwars">
+      <div class="radio">
+        <h4>What side of the force do you fall on?</h4>
+        <label>
+          <input type="radio" name="darkOrLight" value="light" checked>
+          The Light side
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="darkOrLight" value="dark">
+          The Dark side
+        </label>
+      </div>
+
+      <div class="radio">
+        <h4>Male or female characters?</h4>
+        <label>
+          <input type="radio" name="gender" value="male" checked>
+          Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="female">
+          Female
+        </label>
+      </div>
+
+      <div class="radio">
+        <h4>Primary or secondary characters?</h4>
+        <label>
+          <input type="radio" name="role" value="primary" checked>
+          Primary
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="role" value="secondary">
+          Secondary
+        </label>
+      </div>
+
+      <div class="radio">
+        <h4>Humanoids or droids?</h4>
+        <label>
+          <input type="radio" name="identity" value="human" checked>
+          Humanoid
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="identity" value="droid">
+          Droid
+        </label>
+      </div>
+
+      <div class="radio">
+        <h4>How do you stride into combat?</h4>
+        <label>
+          <input type="radio" name="combat" value="lightsaber" checked>
+          Lightsaber
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="combat" value="force">
+          Force powers
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="combat" value="blaster">
+          Blasters
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="combat" value="spaceship">
+          Space Combat
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="combat" value="nocombat">
+          Non-combative
+        </label>
+      </div>
+      <button type="submit" class="btn">Go!</button>
+    </form>
+    <div class="output" id="luke">
+      <img src="https://vignette1.wikia.nocookie.net/starwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest/scale-to-width-down/350?cb=20091030151422" alt="Luke Skywalker"></img>
+    </div>
+    <div class="output" id="leia">
+      <img src="https://vignette1.wikia.nocookie.net/starwars/images/9/9b/Princessleiaheadwithgun.jpg/revision/latest?cb=20071007050854" alt="Leia Skywalker"></img>
+    </div>
+    <div class="output" id="emperor">
+      <img src="http://static.boredpanda.com/blog/wp-content/uploads/2015/11/the-daily-life-of-darth-vader-is-my-latest-365-day-photo-project-33__880.jpg" alt="Emperor Palpatine"></img>
+    </div>
+    <div class="output" id="vader">
+      <img src="http://static.boredpanda.com/blog/wp-content/uploads/2015/11/the-daily-life-of-darth-vader-is-my-latest-365-day-photo-project-33__880.jpg" alt="Darth Vader"></img>
+    </div>
+    <div class="output" id="hansolo">
+      <img src="http://screenrant.com/wp-content/uploads/young-han-solo-star-wars-movie-casting.jpg" alt="Han solo"></img>
+    </div>
+    <div class="output" id="c3p0">
+      <img src="https://www.sideshowtoy.com/wp-content/uploads/2014/11/star-wars-c-3po-sixth-scale-feature-21711.jpg" alt="C3P0"></img>
+    </div>
+    <div class="output" id="r2d2">
+      <img src="https://i.ytimg.com/vi/8tjMM67-aao/maxresdefault.jpg" alt="R2D2"></img>
+    </div>
+    <div class="output" id="bobafett">
+      <img src="https://www.sideshowtoy.com/wp-content/uploads/2015/08/Boba-Fett-Stawars-feature-902491.jpg" alt="Boba Fett"></img>
+    </div>
+    <div class="output" id="stormtroopers">
+      <img src="http://img.amiami.jp/images/product/main/153/FIGURE-013621.jpg" alt="Storm Troopers"></img>
     </div>
 
-      <div class="col-md-6">
-      <form id="subtract">
-        <div class="form-group">
-          <label for="sub1">1st number:</label>
-          <input id="sub1" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="sub2">2nd number:</label>
-          <input id="sub2" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn">Subtract!</button>
-      </form>
-      <div id="outputSubtract"></div>
-    </div>
+
+    <!-- light vs dark side
+    male vs female vs droid characters
+    tale of redemption
+    side characters vs main characters
+    light saber vs force powers
+    x-wing vs tie fighter
+    rebellion vs empire
+
+
+    luke skywalker    light male    primary     human   lightsaber
+    darth vader       dark  male    primary     human   lightsaber
+    princess leia     light female  primary     human   blaster
+    emperor palpatine dark  male    primary     human   force powers
+    han solo          light male    primary     human   space ship
+    c3po              light female  secondary   droid   non-combative
+    r2d2              light male    secondary   droid   non-combative
+    boba fett         dark  male    secondary   droid   space ship
+    storm troopers    dark  female  secondary   droid   blaster-->
+
+
+
   </div>
-
-      <div class="row">
-        <div class="col-md-6">
-      <form id="multiply">
-        <div class="form-group">
-          <label for="mul1">1st number:</label>
-          <input id="mul1" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="mul2">2nd number:</label>
-          <input id="mul2" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn">Multiply!</button>
-      </form>
-      <div id="outputMultiply"></div>
-    </div>
-
-      <div class="col-md-6">
-      <form id="divide">
-        <div class="form-group">
-          <label for="div1">1st number:</label>
-          <input id="div1" class="form-control" type="text">
-        </div>
-        <div class="form-group">
-          <label for="div2">2nd number:</label>
-          <input id="div2" class="form-control" type="text">
-        </div>
-        <button type="submit" class="btn">Divide!</button>
-      </form>
-      <div id="outputDivide"></div>
-    </div>
-  </div>
-
-    </div>
-  </body>
+</body>
 </html>

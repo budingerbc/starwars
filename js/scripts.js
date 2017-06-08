@@ -1,43 +1,51 @@
-var add = function(number1, number2) {
-  return number1 + number2;
-};
-
-var sub = function(number1, number2) {
-  return number1 - number2;
-};
-
-var mult = function(number1, number2) {
-  return number1 * number2;
-};
-
-var divide = function(number1, number2) {
-  return number1 / number2;
-};
-
-
 $(document).ready(function() {
-  $("form#add").submit(function(event) {
+  $("form#starwars").submit(function(event) {
     event.preventDefault();
-    var number1 = parseInt($("#add1").val());
-    var number2 = parseInt($("#add2").val());
-    $("#outputAdd").text(add(number1, number2));
-  });
-  $("form#subtract").submit(function(event) {
-    event.preventDefault();
-    var number1 = parseInt($("#sub1").val());
-    var number2 = parseInt($("#sub2").val());
-    $("#outputSubtract").text(sub(number1, number2));
-  });
-  $("form#multiply").submit(function(event) {
-    event.preventDefault();
-    var number1 = parseInt($("#mul1").val());
-    var number2 = parseInt($("#mul2").val());
-    $("#outputMultiply").text(mult(number1, number2));
-  });
-  $("form#divide").submit(function(event) {
-    event.preventDefault();
-    var number1 = parseInt($("#div1").val());
-    var number2 = parseInt($("#div2").val());
-    $("#outputDivide").text(divide(number1, number2));
+
+    $(".output").hide();
+
+    var darkOrLight = $("input:radio[name=darkOrLight]:checked").val();
+    var gender = $("input:radio[name=gender]:checked").val();
+    var role = $("input:radio[name=role]:checked").val();
+    var idenity = $("input:radio[name=identity]:checked").val();
+    var combat = $("input:radio[name=combat]:checked").val();
+
+    if (combat === 'lightsaber') {
+      if (darkOrLight === 'light') {
+        $(".output#luke").show();
+      } else {
+        $(".output#vader").show();
+      }
+    } else if (combat === 'force') {
+      $(".output#emperor").show();
+    } else if (combat === 'blaster') {
+      if (darkOrLight === 'light') {
+        $(".output#leia").show();
+      } else {
+        $(".output#stormtroopers").show();
+      }
+
+    } else if (combat === 'spaceship') {
+      if (darkOrLight === 'light') {
+        $(".output#hansolo").show();
+      } else {
+        $(".output#bobafett").show();
+      }
+
+    } else {
+      if (gender === 'male') {
+        $(".output#r2d2").show();
+      } else {
+        $(".output#c3p0").show();
+      }
+
+    }
+
+
+    // darkOrLight
+    // gender
+    // role
+    // identity
+    // combat
   });
 });
